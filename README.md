@@ -14,9 +14,9 @@ The app fetches data from a Pokémon API and stores it locally using Core Data f
 
 ## 📸 Screenshots
 
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/38b61442-a0d3-44a1-97cd-efd2b38d40f7">
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/22e9ee7c-41c5-4403-ba4d-37d6cc0dd5bb">
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/8e0bfe95-c914-4355-8d53-2e99c4f327d6">
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/38b61442-a0d3-44a1-97cd-efd2b38d40f7">
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/22e9ee7c-41c5-4403-ba4d-37d6cc0dd5bb">
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/8e0bfe95-c914-4355-8d53-2e99c4f327d6">
 
 ## 📥 Installation
 
