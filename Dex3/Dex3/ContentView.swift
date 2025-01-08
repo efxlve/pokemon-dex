@@ -22,12 +22,15 @@ struct ContentView: View {
     
     @State var filterByFavorites = false
     @StateObject private var pokemonVM = PokemonViewModel(controller: FetchController())
-
+    
+    @State private var searchText = ""
+    @State private var animatedPokemon: [Pokemon] = [] // Animasyon için geçici liste
+    
     var body: some View {
         switch pokemonVM.status {
         case .success:
             NavigationStack {
-                List(filterByFavorites ? favorites : pokedex) { pokemon in
+                List(animatedPokemon) { pokemon in
                     NavigationLink(value: pokemon) {
                         AsyncImage(url: pokemon.sprite!) { image in
                             image
@@ -56,6 +59,7 @@ struct ContentView: View {
                         Button {
                             withAnimation {
                                 filterByFavorites.toggle()
+                                updateAnimatedPokemon()
                             }
                         } label: {
                             Label("Filter by Favorites", systemImage: filterByFavorites ? "star.fill" : "star")
@@ -65,8 +69,33 @@ struct ContentView: View {
                     }
                 }
             }
-            default:
-                ProgressView()
+            .searchable(text: $searchText, prompt: "Search Pokémon")
+            .onChange(of: searchText) { _ in
+                withAnimation {
+                    updateAnimatedPokemon()
+                }
+            }
+            .onChange(of: filterByFavorites) { _ in
+                withAnimation {
+                    updateAnimatedPokemon()
+                }
+            }
+            .onAppear {
+                updateAnimatedPokemon()
+            }
+        default:
+            ProgressView()
+        }
+    }
+    
+    private func updateAnimatedPokemon() {
+        let source = filterByFavorites ? favorites : pokedex
+        if searchText.isEmpty {
+            animatedPokemon = Array(source)
+        } else {
+            animatedPokemon = source.filter { pokemon in
+                pokemon.name?.localizedCaseInsensitiveContains(searchText) ?? false
+            }
         }
     }
 }
