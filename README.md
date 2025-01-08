@@ -3,11 +3,12 @@
 Pokémon Dex is an iOS application built with SwiftUI that allows users to browse for Pokémon. 
 The app fetches data from a Pokémon API and stores it locally using Core Data for offline access. 🌟
 
-![pokemon-dex](https://github.com/user-attachments/assets/24cae6e5-29c1-455e-b9a7-09e9c3ee3397)
+![pokemon-dex](https://github.com/user-attachments/assets/4db66c01-c74b-4b93-a031-6c041611d8ae)
 
 ## ✨ Features
 
 - **Browse Pokémon**: View a list of all available Pokémon with their images and basic information. 🐉
+- **Search Pokémon**: Search for Pokémon by name. 🔍
 - **Favorite**: Mark Pokémon as favorites to easily access them later. ⭐
 - **Detailed View**: Tap on a Pokémon to see detailed information, including type, abilities, and stats. 📋
 - **Offline Access**: Data is stored locally using Core Data, allowing access even without an internet connection. 📡
